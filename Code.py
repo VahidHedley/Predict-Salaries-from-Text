@@ -32,7 +32,7 @@ df = pd.read_csv('C:/Users/Vahid Hedley/OneDrive/McGill - Winter 2022/INSY 699 -
 df = df.sample(n=2500)
 df.reset_index(drop=True, inplace=True)
 
-# encode the observations for below and above the salary threshold as a binary variable where low --> 1 and high --> 0
+# encode the observations for below and above the salary threshold
 df['salary_bucket'] = np.where(df['SalaryNormalized'] <= np.percentile(df['SalaryNormalized'], 75), 'Low', 'High')
 
 # drop all other attributes not pertaining to the object of analysis 
